@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script defer src="./index.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Levent Samlioglu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <!-- Materialize -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <title>Web Developing Courses</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <h1>Join <span class="text-danger">free</span> to our courses</h1>
+      <br />
+      <!-- Paragraph -->
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum natus
+        quo est magnam temporibus ea cupiditate, iusto ab sit dolor vero magni
+        nam quidem obcaecati, quae vel, similique a. Repellat veritatis ullam
+        itaque, error pariatur delectus obcaecati odit reiciendis saepe id
+        cumque tempore, dicta aliquid voluptates. Iste, debitis.
+      </p>
+
+      <!-- List -->
+
+      <ul class="list-group mb-4">
+        <li class="list-group-item active" aria-current="true">
+          HTML (2 days)
+        </li>
+        <li class="list-group-item">CSS Basics (2 days)</li>
+        <li class="list-group-item">SASS (1 day)</li>
+        <li class="list-group-item">JavaScript (5 days)</li>
+      </ul>
+
+      <!-- Table -->
+      <table id='table' class="table caption-top">
+        <caption>
+          Participants
+        </caption>
+        <thead>
+          <tr>
+            <th scope="col" colspan="1">#</th>
+            <th scope="col">First name</th>
+            <th scope="col">Last name</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr>
+            <td scope="row">1</td>
+            <td colspan="1">John</td>
+            <td>Doe</td>
+            <td>johndoe@test.com</td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+
+      <!-- Form -->
+      <div class="row">
+        <form id='my-form' class="col s12">
+          <div class="msg"></div>
+          <!-- Name -->
+          <div class="row">
+            <div class="input-field col s6">
+              <input id="first_name" type="text" class="validate" />
+              <label for="first_name" class="active">First Name</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="last_name" type="text" class="validate" />
+              <label for="last_name" class="active">Last Name</label>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="email" type="email" class="validate" />
+              <label for="email" class="active">Email</label>
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <!-- <div class="row">
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Select gender</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+          </div> -->
+
+          <!-- Age -->
+          <!-- <div class="row">
+            <label for="age" class="active">Age</label>
+            <input type="number" class="validate" value="30" id="age" />
+          </div> -->
+
+          <!-- Birthdate -->
+          <!-- <div class="row">
+            <label for="birthdate" class="form-label">Birthdate</label><br />
+            <input
+              type="date"
+              name="birthdate"
+              id="birthdate"
+              class="form-control"
+            />
+          </div> -->
+
+          <!-- Radio -->
+          <div class="btn-group mb-3 d-block" role="group">
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio1"
+              autocomplete="off"
+              checked
+            />
+            <label class="btn btn-outline-primary" for="btnradio1"
+              >January</label
+            >
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio2"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btnradio2">April</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btnradio3">July</label>
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btnradio3"
+              >September</label
+            >
+          </div>
+
+          <!-- Checkbox -->
+          <div class="btn-group mb-3" role="group">
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck1"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btncheck1">HTML</label>
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck2"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btncheck2">CSS</label>
+
+            <input
+              type="checkbox"
+              class="btn-check"
+              id="btncheck3"
+              autocomplete="off"
+            />
+            <label class="btn btn-outline-primary" for="btncheck3"
+              >JavaScript</label
+            >
+          </div>
+
+          <!-- Input submit -->
+          <div><input type="submit" id='submitbutton' class="btn red mb-4"></input></div>
+
+
+          <!-- Image -->
+          <a href="image.jpg"
+            ><img
+              src="image.jpg"
+              alt="Web developers"
+              class="rounded mx-auto d-block"
+          /></a>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
