@@ -1,0 +1,116 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container, .navbar, .tabs, aside, main{
+  border: 1px solid red;
+}
+
+body{
+  height: 100vh;
+}
+
+
+.container{
+  height: 100%;
+  padding: 30px;
+  max-width: 1200px;
+}
+
+.gift{
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.gift h3{
+  background-color: lightblue;
+}
+
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+}
+
+.logo img{
+  width: 200px;
+}
+.news-logo img{
+  width: 60%;
+}
+.flex1{
+  display: flex;
+
+}
+
+aside{
+  width: 20%;
+}
+
+main{
+  width: 80%;
+}
+
+footer,.subnav{
+  text-align: center;
+  margin-top: 30px;
+}
+
+footer img{
+  width: 50%;
+  margin-top: 30px;
+}
+
+.gift h3{
+  background-color: #366492;
+  width: 142px;
+  margin-left: 500px;
+  padding: 11px 15px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+
+}
+
+.center{
+  text-align: center;
+
+}
+
+.businesses, .auctions{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.tabs{
+  padding:  0 100px;
+  display: flex;
+  gap: 5px;
+}
+
+.tab {
+  width: 20%;
+  padding: 5px 20px;
+  background-color:#003366;
+  color: white;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  }
+  #tab-welcome {
+  transform: scale(1.5);
+  margin-bottom: 6px;
+  background-color: #366492;
+  border-bottom: 0;
+  }
+  .highlight {
+  height: 40px;
+  background-color: #366492;}
+  
+  .tab:focus {
+  transform: scaleY (1.5);
+  margin-bottom: 6px;
+  background-color:#366492;
+  border-bottom: 0;}

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Levent Samliglu" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Developing Courses</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <h1>Join <span style="color: red">free</span> to our courses</h1>
+    <br />
+    <!-- Paragraph -->
+
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum natus
+      quo est magnam temporibus ea cupiditate, iusto ab sit dolor vero magni nam
+      quidem obcaecati, quae vel, similique a. Repellat veritatis ullam itaque,
+      error pariatur delectus obcaecati odit reiciendis saepe id cumque tempore,
+      dicta aliquid voluptates. Iste, debitis. Explicabo vero voluptatibus
+      molestiae veritatis eum dicta officiis, minus consectetur animi
+      laudantium, quae possimus vitae deleniti provident rem id maxime illo eius
+      accusamus, debitis consequatur consequuntur alias commodi? Modi fugit,
+      harum dolores aut enim iste id dolorum labore obcaecati repellendus quasi,
+      commodi quaerat laboriosam voluptatibus hic culpa non fuga praesentium
+      optio assumenda.
+    </p>
+    <br />
+
+    <!-- Nested lists -->
+    <ul>
+      <li>HTML (2 days)</li>
+      <li>
+        CSS
+        <ul>
+          <li>Basics (2 days)</li>
+          <li>SASS (1 day)</li>
+        </ul>
+      </li>
+      <li>JavaScript (5 days)</li>
+    </ul>
+
+    <br />
+
+    <!-- Tables -->
+    <table>
+      <caption>
+        <strong>Educators</strong>
+      </caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Position</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John Doe</td>
+          <td>HTML</td>
+          <td>Front-end Web Developer</td>
+        </tr>
+        <tr>
+          <td>Kate Smith</td>
+          <td>CSS</td>
+          <td>Front-end Web Developer</td>
+        </tr>
+        <tr>
+          <td>Jeff Wilson</td>
+          <td>JavaScript</td>
+          <td>Full-stack Web Developer</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <form action="process.php">
+      <!-- Text -->
+      <div>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" placeholder="Enter a name" />
+      </div>
+      <br />
+      <!-- Email -->
+      <div>
+        <label for="email">Email</label><br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Enter an email"
+        />
+      </div>
+      <br />
+
+      <!-- Textarea -->
+      <div>
+        <label for="message">Message</label><br />
+        <textarea name="message" id="message" cols="50" rows="5"></textarea>
+      </div>
+      <br />
+
+      <!-- Select -->
+      <div>
+        <label for="gender">Gender</label>
+        <select name="gender" id="gender">
+          <option value="male">Male</option>
+          <option value="female" selected>Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <br />
+
+      <!-- Number -->
+      <div>
+        <label for="age">Age</label><br />
+        <input type="number" name="age" id="age" value="30" />
+      </div>
+      <br />
+
+      <!-- Date -->
+      <div>
+        <label for="birthdate">Birthdate</label><br />
+        <input type="date" name="birthdate" id="birthdate" />
+      </div>
+      <br />
+
+      <!-- Radio -->
+      <div>
+        <p>Please select a term:</p>
+        <input type="radio" id="january" name="term" value="January" />
+        <label for="january">January</label><br />
+        <input type="radio" id="april" name="term" value="April" checked />
+        <label for="april">April</label><br />
+        <input type="radio" id="july" name="term" value="July" />
+        <label for="july">July</label><br />
+        <input type="radio" id="october" name="term" value="October" />
+        <label for="october">October</label>
+      </div>
+      <br />
+
+      <!-- Checkbox -->
+
+      <div>
+        <p>Please select course:</p>
+        <input type="checkbox" id="html" name="fav_language" value="HTML" />
+        <label for="html">HTML</label>
+        <input type="checkbox" id="css" name="fav_language" value="CSS" />
+        <label for="css">CSS</label>
+        <input
+          type="checkbox"
+          id="javascript"
+          name="fav_language"
+          value="JavaScript"
+        />
+        <label for="javascript">JavaScript</label>
+      </div>
+      <br />
+
+      <!-- Input submit -->
+      <input type="submit" value="Submit" />
+    </form>
+
+    <br />
+    <a href="image.jpg"
+      ><img src="image.jpg" alt="Web developers" width="500"
+    /></a>
+  </body>
+</html>

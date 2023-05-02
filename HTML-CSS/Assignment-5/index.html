@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>AirBNB</title>
+  </head>
+
+  <body>
+    <div class="container m-20">
+      <!-- Header -->
+      <header>
+        <hr />
+        <h2 class="mt-20 mb-20">AirBed & Breakfast - Find a place</h2>
+        <ul class="mb-20">
+          <li><a href="#">Sign Up</a></li>
+          <li><a href="#">Sign In</a></li>
+        </ul>
+        <p>This listing is no longer available.</p>
+        <hr />
+      </header>
+
+      <!-- Form and pics -->
+      <main class="mt-20">
+        <div class="place mr-20 ml-20">
+          <h2 class="mb-20">Find a place to stay.</h2>
+
+          <a href="#">Rent nightly from real people in 830 cities in 73 countries.</a>
+
+          <form action="#">
+            <input type="text" class="mt-20" placeholder="Were are you going?">
+            <p>_</p>
+            <label for="checkin">Check in</label>
+            <input type="date" id="checkin" name="checkin">
+            <label for="checkout">Check out</label>
+            <input type="date" id="checkout" name="checkout">
+            <label for="guests" >Guests</label>
+            <input type="number" class="label" id="guests" name="guests" value="1" min="1">
+          </form>
+        </div>
+
+        <div class="main-image mr-20">
+
+          <div class="img-city">
+            <img src="./Images/Amsterdam.webp" alt="Amsterdam">
+          </div>
+
+          <div class="person">
+            <div class="img-person">
+              <img src="./Images/Female.jpeg" alt="Person">
+            </div>
+            <div class="text-person">
+              <p><a href="#">"Gabs Place"</a> <b>- Amsterdam, Netherlands</b></p>
+              <p>$85/night</p>
+              <p>1 Review</p>
+              <i class="fa-solid fa-play-pause"></i>
+            </div> 
+          </div>
+        </div>
+
+        <div class="cities">
+          <div class="city">
+            <h5>Frances & Greg, Los Angles</h5>
+            <p>Recently reviewed</p>
+            <img src="./Images/Two_People.jpeg" alt="Los Angles">
+          </div>
+          <div class="city">
+            <h5>Washington DC</h5>
+            <p>From $10/night</p>
+            <img src="./Images/Washington.jpeg" alt="Washington DC">
+          </div>
+          <div class="city">
+            <h5>Paris, Fance</h5>
+            <p>Rooms from $10/night</p>
+            <img src="./Images/Paris.jpeg" alt="Paris">
+          </div>
+        </div>
+
+      </main>
+
+      <!-- Alone image -->
+      <div>
+        <div class="city ml-20">
+          <h4 class="h4">San Francisco, CA</h4>
+          <p>Rooms from $29/night</p>
+          <img src="./Images/SanFrancisco.jpeg" alt="San Francisco">
+        </div>
+      </div>
+
+      <!-- Logos -->
+      <section class="ml-20">
+        <div class="logos">
+          <span><b><em><u>As you seen:</u></em></b></span>
+          <img src="./Logos/cnn.png" alt="CNN">
+          <img src="./Logos/NYT.png" alt="NYT">
+          <img src="./Logos/TechCrunch.png" alt="Tech Crunch">
+          <img src="./Logos/newsweek.png" alt="Newsweek">
+          <img src="./Logos/WSJ.png" alt="Wall Street Journal">
+          <img src="./Logos/NBC.png" alt="NBC">
+        </div>
+      </section>
+
+      <!-- Submenu -->
+      <nav class="ml-40">
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Terms & Privacy</a></li>
+          <li><span>Biggest Deals:</span><a href="#"> New York</a></li>
+          <li><a href="#">San Francisco</a></li>
+          <li><a href="#">Paris</a></li>
+          <li><span>Follow us on:</span><a href="#"> Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ul>
+      </nav>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="ml-20">&#169 AirBed & Breakfast, Inc.</footer>
+  </body>
+</html>

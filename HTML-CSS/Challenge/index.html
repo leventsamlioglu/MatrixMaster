@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- navbar -->
+      <nav>
+        <img src="./images/logo.png" alt="logo" />
+
+        <div class="nav-form">
+          <form action="#">
+            <div class="input-1">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" />
+            </div>
+            <div class="input-2">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" />
+            </div>
+            <button type="submit">Log In</button>
+          </form>
+        </div>
+      </nav>
+
+      <!-- main section-->
+
+      <main>
+        <div class="left-side">
+          <h3>
+            Facebook helps you connect and share with the people in your life.
+          </h3>
+          <img src="./images/image.png" alt="Connecting people" />
+        </div>
+
+        <div class="right-side">
+          <h4>Sign Up</h4>
+          <p>It's free and always will be.</p>
+          <hr />
+
+          <div class="parts">
+            <div class="part-1 mt-10">
+              <label for="first_name" class="mb-f">First Name:</label>
+              <label for="last_name" class="mb-30">Last Name:</label>
+              <label for="your_email" class="mb-f">Your Email:</label>
+              <label for="Re_enter" class="mb-f">Re-enter Email:</label>
+              <label for="new_password" class="mb-d">New Password:</label>
+              <label for="sex">I am:</label>
+              <label for="#">Birthday:</label>
+            </div>
+
+            <div class="part-2">
+              <input
+                type="text"
+                name="first_name"
+                id="first_name"
+                class="mb-a"
+              />
+              <input
+                type="email"
+                name="last_name"
+                id="last_name"
+                class="mb-b"
+              />
+              <input
+                type="email"
+                name="your_email"
+                id="your_email"
+                class="mb-c"
+              />
+              <input type="text" name="Re_enter" id="Re_enter" class="mb-d" />
+              <input
+                type="password"
+                name="new_password"
+                id="new_password"
+                class="mb-e"
+              />
+
+              <div>
+                <select name="sex" id="sex">
+                  <option value="select">Select Sex:</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div>
+                <div class="month">
+                  <select class="select-month" id="month" name="month">
+                    <option value="0" selected>Month:</option>
+                    <option value="1">Janaury</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+
+                <div class="day">
+                  <select class="select-day" id="day" name="day">
+                    <option value="00" selected>Day:</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
+                </div>
+
+                <div class="year">
+                  <select class="select-year" id="year" name="year">
+                    <option value="0" selected>Year</option>
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                    <option value="2021">2021</option>
+                    <option value="2022">2022</option>
+                    <option value="2023">2023</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mb-f">
+                <a href="#">Who do I need to provide my birthday?</a>
+              </div>
+
+              <p>
+                By clicking Sign Up, you agree to our <a href="#">Terms</a> and
+                that you have read and understand our
+                <a href="#">Data Use Policy.</a>
+              </p>
+
+              <div class="text-center">
+                <button type="submit" class="mb-c">Sign Up</button>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <p class="mt-a center">
+            <a href="#" class="mt-a">Create a page</a> for a celebrity, band or
+            business.
+          </p>
+        </div>
+      </main>
+
+      <!-- footer -->
+
+      <footer>
+        <div class="languages mb-d">
+          <a href="#">English (US)</a>
+          <a href="#">Espanol</a>
+          <a href="#">Portugues (Brasil)</a>
+          <a href="#">Francais (France)</a>
+          <a href="#">Deutsch</a>
+          <a href="#">Turkce</a>
+          <a href="#">العربية</a>
+          <a href="#">Frysk</a>
+          <a href="#">Polski</a>
+          <a href="#">Nederlands</a>
+          <a href="#">...</a>
+        </div>
+        <hr />
+        <br />
+        <div class="submenu">
+          <p>Facebook &#169; 2012 <a href="#">English (US)</a></p>
+          <div class="ml-70">
+            <a href="#">Mobile</a>
+            <span>.</span>
+            <a href="#">Find Friends</a>
+            <span>.</span>
+            <a href="#">Badges</a>
+            <span>.</span>
+            <a href="#">People</a>
+            <span>.</span>
+            <a href="#">Pages</a>
+            <span>.</span>
+            <a href="#">About</a>
+            <span>.</span>
+            <a href="#">Advertising</a>
+            <span>.</span>
+            <a href="#">Create a Page</a>
+            <span>.</span>
+            <a href="#">Developers</a>
+            <span>.</span>
+            <a href="#">Careers</a>
+            <span>.</span>
+            <a href="#">Privacy</a>
+            <span>.</span>
+            <a href="#">Terms</a>
+            <span>.</span>
+            <a href="#">Help</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

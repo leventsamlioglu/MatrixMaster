@@ -1,0 +1,178 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-size: medium;
+  box-sizing: border-box;
+}
+
+.mt-10{
+  margin-top: 10px;
+}
+
+.mb-a{
+  margin-bottom: 3px;
+}
+.mb-b{
+  margin-bottom: 5px;
+}
+.mb-c{
+  margin-bottom: 7px;
+}
+.mb-d{
+  margin-bottom: 9px;
+}
+.mb-e{
+  margin-bottom: 9px;
+}
+
+.mb-f{
+  margin-bottom: 20px;
+}
+
+.mb-30{
+  margin-bottom: 30px;
+}
+
+.mt-a{
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.ml-70{
+  margin-left: 100px;
+}
+
+body{
+  height: 100vh;
+  background-color: #EAEDF5;
+}
+
+.container{
+  padding: 10px;
+  max-width: 1200px;
+}
+
+/* Navbar */
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #3B5998;
+  color: white;
+  padding: 0 200px;
+}
+
+nav img{
+  width: 15%;
+}
+
+nav .nav-form{
+  padding: 5px;
+}
+
+.input-1,.input-2{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.input-1>label, .input-2>label{
+  display:block;
+  font-size: small;
+}
+
+.input-1>input, .input-2>input{
+  width: 150px;
+}
+
+.nav-form button{
+  color: white;
+  background-color: #3B5998;
+  font-size: 0.8rem;
+  padding: 2px 3px;
+  border-radius: 2px;
+  font-weight: bold;
+}
+
+/* Main */
+
+main{
+  display: flex;
+  margin: 20px 200px;
+}
+
+.left-side{
+  width: 50%;
+}
+
+.left-side img{
+  width: -webkit-fill-available;
+}
+
+.right-side{
+  margin-left: 50px;
+}
+
+.right-side p{
+  margin-bottom: 10px;
+}
+
+form{margin: 10px auto;}
+
+.right-side .month,.day,.year{
+  display: inline;
+}
+
+footer{
+  text-align: center;
+  margin: 0 200px;
+}
+
+.submenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submenu p{width: 50%;
+text-align: start;
+}
+
+.languages {
+ text-align: start;
+}
+
+.parts{display: flex;}
+
+.part-1 label{
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+}
+
+.part-1{
+  display: block;
+  width: 250px;
+  margin-right: 5px;
+}
+
+.part-2 input{
+  height: 40px;
+  width: 100%;
+}
+
+.center{
+  text-align: center;
+}
+
+.text-center button{
+  background-color: #67A54B;
+  color: white;
+  padding: 3px 15px;
+}
+
+.part-2 p,.part-2 a{
+  font-size: 1.1rem;
+}
+
+
+

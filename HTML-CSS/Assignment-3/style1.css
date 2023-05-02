@@ -1,0 +1,54 @@
+*{
+  margin: 5px;
+  padding: 5px;
+ }
+
+ body{
+  width: 960px;
+ }
+
+#container{
+  background-color: silver;
+}
+
+#header{
+  background-color: blue;
+  height: 150px;
+  margin: 10px;
+}
+
+.nav{
+  display: flex;
+  margin: 0;
+}
+
+#nav_bar{
+  width: 20%;
+  height: 300px;
+  background-color: red;
+  margin-left: 5px;
+}
+
+#main_content{
+  width: 80%;
+  background-color: yellow;
+  display: flex; 
+  flex-direction: column;
+}
+
+.content{
+  display: flex;
+}
+
+.subcontent{
+  height: 200px;
+  margin: 10px;  
+  flex: 1;
+  background-color: purple;
+}
+
+#advertisements{
+ height: 90px;
+ background-color: pink;
+ margin: auto 10px;
+} 

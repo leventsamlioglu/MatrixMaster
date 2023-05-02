@@ -1,0 +1,121 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pad10{
+  padding: 10px;
+}
+
+.bg-g1{
+  background: #CCCCCC;
+}
+.bg-g2{
+  background: #DDDDDD;
+}
+.bg-g3{
+  background: #EEEEEE;
+}
+.bg-w{
+  background: white;
+} 
+
+.txt-medium{
+  font-size:1.3rem;
+}
+
+button{
+  background-color: white;
+  padding:  0 5px;
+}
+
+li{list-style-type: none;
+}
+
+.container{
+  height: 100vh;
+  width: 1000px;
+  margin: 40px auto;
+}
+
+a{
+  display: block;
+  background: white;
+  font-size: 1.3rem;
+}
+
+aside{
+  width: 20%;
+padding: 10px;
+line-height: 1.5;
+}
+
+main{width: 79%;
+}
+
+aside,main{
+  display: inline-block;
+  vertical-align: top;
+} 
+
+.box{
+  display: inline-block;
+  vertical-align: top;
+  margin: auto 10px;
+  width: 30%;
+}
+
+.help a{
+  display: inline;
+}
+
+.aside-a{
+  text-align: center;
+  background:#DDDDDD;
+}
+
+nav{
+  display: inherit;
+  margin-bottom: 10px
+}
+
+.navbar ul li{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.header, .navbar .logo a{font-size: xx-large;}
+
+.search{
+  font-size: 1.2rem;
+}
+
+.search select{
+  display: block;
+}
+
+.logo{
+  margin-left: 20px;
+margin-right: 60px;
+}
+
+.last{
+  margin-left: 250px;
+  margin-top: 5px;
+}
+
+.small{
+  font-size: small;
+}
+
+.box a{
+  border-bottom: 1px solid #EEEEEE;
+}
+
+
+
+
+
+
