@@ -7,11 +7,22 @@
 // 4- Use console to print array
 
 // Code:
-let arr = [0,1]
-for (let i = 0; i < 10; i++) {
- arr.push(arr[i]+arr[i+1])
+let arr = [0, 1]
+
+function fibonacci(number) {
+    if (number < 1) {
+        return ('Number must be greater then 1')
+
+    } else {
+        for (let i = 0; i < number; i++) {
+            arr.push(arr[i] + arr[i + 1])
+        }
+        return arr
+    }
 }
-console.log(arr)
+
+console.log(fibonacci(10))
+
 
 // Diagram:
 // 1: i=0 -> Result: [0,1,1]
