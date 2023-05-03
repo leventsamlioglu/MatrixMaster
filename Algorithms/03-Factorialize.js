@@ -15,13 +15,13 @@ function factorialize(n) {
     if (n < 0) {
         return 'Number must be positive'
     } else if (n === 0) {
-        return 0
+        return 1
     } else {
-        let sum = 1;
-        for (let i = 1; i <= n; i++) {
-            sum *= i
-        }
-        return sum
+        return n * factorialize(n - 1)
+        // let sum = 1;
+        // for (let i = 1; i <= n; i++) {
+        //     sum *= i
+        // }
     }
 }
 
