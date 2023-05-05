@@ -1,4 +1,4 @@
-// Write a program using JS that replace every letter of the word Program of the array with *  
+// Write a program using JS that replace every letter of the word Program of the array with *
 
 // Pseudocode:
 // 1- Create an array with ["Man", "I", "Love", "The", "Matrix", "Program"]
@@ -13,16 +13,19 @@
 
 const arr = ["Man", "I", "Love", "The", "Matrix", "Program"];
 let star = "";
-for (const item of arr) {
-  if (item === "Program") {
-    for (let i = 1; i <= item.length; i++) {
-      star += "*";
+
+function checkWord(word) {
+  for (const item of arr) {
+    if (item === word) {
+      for (let i = 1; i <= item.length; i++) {
+        star += "*";
+      }
+      arr[arr.indexOf(item)] = star;
     }
-    arr[arr.indexOf(item)] = star;
   }
 }
 
-console.log(arr);
+console.log(checkWord("The"));
 
 // Diagram:
 // 1: item:'Man' -> Result: ["Man", "I", "Love", "The", "Matrix", "Program"]
