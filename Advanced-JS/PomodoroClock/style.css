@@ -1,63 +1,60 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-
-  body{
-    background: black;
-  }
-  
-  .container {
-    background-color: #323233;
-    font-family: 'Barlow Semi Condensed', sans-serif;
-    font-weight: lighter;
-    height: 100vh;
-    line-height: 1.7;
-    /* margin: auto; */
-    text-align: center;
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center
-
-  }
-
-  h1{
-    padding: 20px;
-    font-size: 4rem;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-  }
-
-  button{
-    background-color: #323233;
-    margin: 10px;
-    border: none;
-    color: white;
-    font-size: 1.4rem;
-
-  }
-
-  span{
-    font-size: 2rem;
-  }
-
-  main{
-    cursor: pointer;
-  }
-
-  .counter{
-    width: 20rem;
-    border: 1px greenyellow solid;
-    padding: 4rem;
-    margin: inherit;
-  }
-
-  .counter p{
-    font-size: 3rem;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.counter span{
-    font-size: 4rem;
-  }
+body {
+  background: black;
+}
+
+.container {
+  background-color: #323233;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: lighter;
+  height: 100vh;
+  line-height: 1.7;
+  text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  padding: 20px;
+  font-size: 7vw;
+  font-family: "Dancing Script", cursive;
+}
+
+button {
+  background-color: #323233;
+  margin: 10px;
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+}
+
+.margins{
+  margin: auto 30px;
+}
+
+span {
+  font-size: 2rem;
+}
+
+main {
+  cursor: pointer;
+}
+
+.counter {
+  width: 20rem;
+  border: 1px greenyellow solid;
+  padding: 4rem;
+  margin: inherit;
+  font-size: 3rem;
+}
+
+.counter span {
+  font-size: 4rem;
+}
