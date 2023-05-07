@@ -23,7 +23,7 @@ body {
 
 h1 {
   padding: 20px;
-  font-size: 7vw;
+  font-size: 9vw;
   font-family: "Dancing Script", cursive;
 }
 
@@ -58,3 +58,4 @@ main {
 .counter span {
   font-size: 4rem;
 }
+
