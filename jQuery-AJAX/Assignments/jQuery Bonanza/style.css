@@ -1,0 +1,58 @@
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: lightgray;
+	height: 50px;
+}
+input {
+	width: 80%;
+	border-radius: 3px;
+}
+
+a {
+	text-decoration: none;
+}
+
+main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	background-color: aliceblue;
+}
+
+.click {
+	margin: auto;
+}
+
+#btn-click,
+#btn-animate {
+	display: block;
+	margin: auto;
+	cursor: pointer;
+	text-align: center;
+	padding: 7px 16px;
+	min-height: 36px;
+	min-width: 36px;
+	color: #ffffff;
+	background: #008060;
+	border-radius: 4px;
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.div-animate {
+	height: 50px;
+	width: 50px;
+	background-color: red;
+	position: relative;
+	margin: 10px auto;
+}
+
+.list {
+	margin-top: 20px;
+	display: inline;
+	margin: auto;
+}
+
+
