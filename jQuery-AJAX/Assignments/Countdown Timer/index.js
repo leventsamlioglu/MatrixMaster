@@ -6,7 +6,8 @@ let timer_on = 0;
 var minutes, seconds, milliseconds;
 
 function timedCount() {
-	if (edit) return;
+	$("#edit-input").hide();
+	edit = false;
 	if (duration == 0) {
 		clearTimeout(timeout);
 		clearTimeout(timeout1);
@@ -44,17 +45,25 @@ $("#start").click(function () {
 $("#reset").click(function () {
 	clearTimeout(timeout);
 	clearTimeout(timeout1);
+	$("#edit-input").hide();
 	milli = 100;
-	duration = $("#edit-input").val() * 60;
+	duration = $("#edit-number").text() * 60;
 	$("#timer").text($("#edit-number").text() + ":" + "00" + ":");
 	$("#timer1").text("00");
 	timer_on = 0;
+	edit = false;
 });
 
 $("#edit-input").hide();
 $("#message").hide();
 
 $("#edit-a").click(function () {
+	$("#edit-input").val("");
+	if (edit == true) {
+		$("#edit-input").hide();
+		edit = false;
+		return;
+	}
 	if (timer_on == 1) {
 		$("#message").show();
 		$("#message").text("Reset the timer!!");
@@ -67,15 +76,19 @@ $("#edit-a").click(function () {
 		var code = e.which;
 		if (code == 13) {
 			e.preventDefault();
-			if ($("#edit-input").val() == (NaN || 0)) {
-				$("#edit-number").text("00");
+			if ($("#edit-input").val() < 1 || $("#edit-input").val() > 25) {
+				$("#message").show();
+				$("#message").text("Number must be between 1-25!!");
+				$("#message").fadeOut(3000);
+				return;
 			} else {
 				$("#edit-number").text($("#edit-input").val());
 				duration = $("#edit-input").val() * 60;
 				edit = false;
 			}
-			$("#edit-input").val("");
 			$("#edit-input").hide();
 		}
 	});
 });
+
+
