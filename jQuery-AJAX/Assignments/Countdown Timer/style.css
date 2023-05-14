@@ -49,9 +49,13 @@ main{
     color: white; 
 }
 
-#edit{
+#edit,#message{
     display: block;
     margin:  0 auto;
+}
+
+#message{
+    color: red;
 }
 
 a{
