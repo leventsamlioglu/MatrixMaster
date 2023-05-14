@@ -1,0 +1,16 @@
+main{
+    display: flex;
+    justify-content: center;
+    margin-top: 37%;
+
+}
+
+#timer,#timer1{
+    font-size: 4rem;
+}
+
+button{
+padding:10px;
+border-radius: 50%;
+
+}
