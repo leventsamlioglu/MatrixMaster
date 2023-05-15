@@ -1,0 +1,12 @@
+#gif{
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr 4fr;
+    gap: 1rem;
+    align-items: stretch;
+}
+
+img{
+    width: 100%;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;} 
+
+
