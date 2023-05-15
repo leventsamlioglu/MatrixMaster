@@ -1,7 +1,7 @@
 let url = $("#button").click(function () {
-    $('#gif').empty()
+	$("#gif").empty();
 	grab_data();
-    $('#input').val('')
+	$("#input").val("");
 });
 
 function createRequest(url) {
@@ -12,12 +12,12 @@ function createRequest(url) {
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			// Parse the JSON response
 			var response_objects = JSON.parse(xmlHttp.responseText);
-            
+
 			gifs = response_objects["results"];
 
-            gifs.map(gif=>{
-                $('#gif').append(`<img src="${gif["media_formats"]["gif"]["url"]}"/>`)
-            })
+			gifs.map((gif) => {
+				$("#gif").append(`<img src="${gif["media_formats"]["gif"]["url"]}"/>`);
+			});
 		}
 	};
 
@@ -38,10 +38,7 @@ function grab_data() {
 	var lmt = 12;
 
 	// test search term
-	// var search_term = "excited";
-    let search_term = $('#input').val()
-    console.log("🚀 ~ grab_data ~ search_term:", search_term)
-    
+	let search_term = $("#input").val();
 
 	// using default locale of en_US
 	var search_url =
@@ -59,5 +56,3 @@ function grab_data() {
 	// data will be loaded by each call's callback
 	return;
 }
-
-// AIzaSyDWMTZwwSF1FiWG_B7p7z7o2dvK4asYinc
