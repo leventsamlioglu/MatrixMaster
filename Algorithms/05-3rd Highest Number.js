@@ -35,11 +35,15 @@ function thirdHighest(array) {
 console.log(thirdHighest([2, 5, 3, 1, 4]));
 
 // Diagram:
-// 1: first=0 second=0 third=0
-// 2: i=0 -> array[0]=2 first=2 second=0 third=0
-// 3: i=1 -> array[1]=2 first=5 second=2 third=0
-// 4: i=2 -> array[2]=3 first=5 second=3 third=2
-// 5: i=3 -> array[3]=1 first=5 second=3 third=2
-// 6: i=3 -> array[4]=4 first=5 second=4 third=3
-// 7: i=4 -> i is not smaller than array length -> Loop will stop
-// 8: print result: true
+
+// arr = [2, 5, 3, 1, 4]
+// first, second, third = 0
+
+// i 	arr[i]	arr[i] > first	arr[i] > second	  arr[i] > third	first	 second	  third
+// 0	  2	          true 	            -	               -	        2	     0	      0
+// 1	  5	          true 	            -	               -	        5	     2	      0
+// 2	  3	          false 	        true 	             -	        5	     3	      2
+// 3	  1	          false 	        false 	         false 	      5	     3	      2
+// 4	  4	          false 	        true 	             -        	5	     4      	3
+
+// Result: 3
