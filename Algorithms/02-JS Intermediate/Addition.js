@@ -10,9 +10,9 @@
 
 let total = 0;
 for (let i = 200; i <= 2700; i++) {
-  if (i % 3 === 0 || i % 5 === 0) {
-    total += i;
-  }
+	if ((i % 3 === 0 || i % 5 === 0) && (i % 3 === 0 && i % 5 === 0)) {
+		total += i;
+	}
 }
 console.log(total);
 
@@ -21,5 +21,5 @@ console.log(total);
 // 2: i++ ... i=201 -> Total:401
 // 3: i++ ... i=202 -> Total:401
 // ...
-// 2500: i++ ... i=2700 -> Total:1693182
+// 2500: i++ ... i=2700 -> Total:242985
 // 2501: i++ ... 2701 is not smaller than 2700 -> Loop will stop
