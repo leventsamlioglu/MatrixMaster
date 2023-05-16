@@ -2,58 +2,89 @@
 
 // Pseudocodes:
 // 1- create a function that takes a parameter as a number
-// 2- loop through to get an array from the number
-// 3- loop through from 2 to length of array
-// 4- check all the items in array if divisible by other items except 1 and itself
-// 5- if so, push the number to new array
-// 6- sum all the numbers into the new array
-// 7- print sum
+// 2- 	define an array for prime numbers
+// 3- 	define a variable for sum with 0
+// 4- 	loop 'i' through 2 to number(inclusive) 
+// 5- 		loop 'j' through 2 to number(inclusive)
+// 6- 			if 'i' is not divisible by 'j' then continue
+// 7- 			if array doesn't include 'j' then push 'j' in it
+// 8-			break the loop
+// 9- 	sum all the prime number in the array
+// 10-  return sum
+// 11- call the function
 
 function sumAllPrimes(number) {
-	let array = [];
-	let newArray = [2];
+	let primes = [];
+	let sum = 0;
 
-	for (let i = 1; i <= number; i++) {
-		array.push(i);
-	}
-
-	for (let j = 2; j < array.length; j++) {
-		let prime = false;
-
-		for (let k = 1; k < j; k++) {
-			if (array[j] % array[k] == 0) {
-				prime = false;
-				break;
-			} else prime = true;
+	for (let i = 2; i <= number; i++) {
+		for (let j = 2; j <= number; j++) {
+			if (i % j !== 0) {
+				continue;
+			}
+			if (!primes.includes(j)) {
+				primes.push(j);
+			}
+			break;
 		}
-		if (prime == true) newArray.push(array[j]);
 	}
-
-	let sum = newArray.reduce((total, current) => total + current);
-
-	console.log(sum);
+	sum = primes.reduce((total, current) => total + current);
+	return sum;
 }
 
-sumAllPrimes(7);
+console.log(sumAllPrimes(11));
 
 // Diagram:
 
 // number	7
-// array	[1,2,3,4,5,6,7]
-// newArray	[2]
-// prime	flase
 
-//  j	k	array[j]	array[k]	prime	newArray
-//  2	1	    3	        2	    true 	[2,3]
-//  3	1	    4	        2	    false 	[2,3]
-//  4	1	    5	        2	    true
-//  4	2	    5	        3	    true
-//  4	3	    5	        4	    true 	[2,3,5]
-//  5	1	    6	        2	    false 	[2,3,5]
-//  6	1	    7	        2	    true
-//  6	2	    7	        3	    true
-//  6	3	    7	        4	    true
-//  6	4	    7	        5	    true
-//  6	5	    7	        6	    true 	[2,3,5,7]
+//  i	j	i % j !== 0		!primes.includes(j)		primes.push(j)
+//  2	2	  false	        		true			[2]
+//  3	2	  true	        	    - 				-
+//  3	3	  false	        	    true			[2,3]
+//  4	2	  false	        	    false			-
+//  5	2	  true  				-	 			-
+//  5	3	  true	        	    - 				-
+//  5	4	  true 	        		-			    -
+//  5	5	  false	        	    true			[2,3,5]
+//  6	2	  false		       	    false			-
+//  7	2	  true					-				-	        
+//  7	3	  true					-				-	        
+//  7	4	  true					-				-	        
+//  7	5	  true					-				-	        
+//  7	6	  true					-				-	        
+//  7	7	  false					true		    [2,3,5,7]	        
+				 	        
 
 // sum => 17
+
+
+// Alternative solution
+// ---------------------------------------------------------------------
+
+// function sumAllPrimes(number) {
+// 	let array = [];
+// 	let newArray = [2];
+
+// 	for (let i = 1; i <= number; i++) {
+// 		array.push(i);
+// 	}
+
+// 	for (let j = 2; j < array.length; j++) {
+// 		let prime = false;
+
+// 		for (let k = 1; k < j; k++) {
+// 			if (array[j] % array[k] == 0) {
+// 				prime = false;
+// 				break;
+// 			} else prime = true;
+// 		}
+// 		if (prime == true) newArray.push(array[j]);
+// 	}
+
+// 	let sum = newArray.reduce((total, current) => total + current);
+
+// 	console.log(sum);
+// }
+
+// sumAllPrimes(7);
