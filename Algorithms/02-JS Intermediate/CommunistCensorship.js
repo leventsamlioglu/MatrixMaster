@@ -2,30 +2,34 @@
 
 // Pseudocode:
 // 1- Create an array with ["Man", "I", "Love", "The", "Matrix", "Program"]
-// 2- Define a string variable to add number of stars
-// 2- Loop through array with for..of
-// 3- Check if the item of the array is 'Program'
-// 4- Then create a loop to count number of stars
-// 5- Add a star to 'starCount'
-// 6- Outside the for loop assign the star to array's index of item
+// 2- Create a function
+// 3- Loop through array with for..of
+// 4- Define a string variable to add number of stars
+// 5- Check if the item of the array is 'Program'
+// 6- Then create a loop to count number of stars
+// 7- Add a star to 'starCount'
+// 8- Outside the for loop assign the star to array's index of item
+// 9- Return the array
+// 10- Call the function
 
 // Code:
 
-const arr = ["Man", "I", "Love", "The", "Matrix", "Program"];
-let star = "";
+const arr = ["Man", "The", "Love", "The", "Matrix", "Program"];
 
 function checkWord(word) {
-  for (const item of arr) {
-    if (item === word) {
-      for (let i = 1; i <= item.length; i++) {
-        star += "*";
-      }
-      arr[arr.indexOf(item)] = star;
-    }
-  }
+	for (const item of arr) {
+		let star = "";
+		if (item === word) {
+			for (let i = 1; i <= item.length; i++) {
+				star += "*";
+			}
+			arr[arr.indexOf(item)] = star;
+		}
+	}
+	return arr;
 }
 
-console.log(checkWord("The"));
+console.log(checkWord("Program"));
 
 // Diagram:
 // 1: item:'Man' -> Result: ["Man", "I", "Love", "The", "Matrix", "Program"]
