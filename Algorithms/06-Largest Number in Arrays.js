@@ -24,7 +24,6 @@ for (let i = 0; i < arr.length; i++) {
     if (arr[i][k] > max) {
       max = arr[i][k];
       result = arr[i];
-      k = arr[i].length - 1; // If you find an item greater then max, so it's not necessary to check other items of sub-array
     }
   }
 }
