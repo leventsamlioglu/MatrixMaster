@@ -4,28 +4,23 @@
 
 // Pseudocode:
 // 1- Declare a function which has 'word' parameter
-// 2- Use split method to split the string into the array of substrings 
-// 3- Use join method to return the array as a string.
-// 4- Use toLowerCase method to convert the string to lowercase letters
-// 5- Loop through 0 to string length / 2
-// 6- Inside the loop, check if string[i] is equal to string[string length-i-1]
-// 7- If so return true
-// 8- Use console to print function result
+// 2-   Use toLowerCase method to convert the string to lowercase letters
+// 3-   Loop through 0 to string length / 2
+// 4-     Inside the loop, check if string[i] is equal to string[string length-i-1]
+// 5-       If so return true
+// 6-   Return false
+// 6- Call the func to print result
 
-
-let checkPalindrome = function(word){
-    let inputWord = word;
-    let checkString = inputWord.split(" ").join("").toLowerCase();
-    for(let i = 0; i < checkString.length/2; i++){
-        if(checkString[i] != checkString[checkString.length-i-1]){
-          return false; 
-        }
-    }
-    return true;
-    }
-    let output = checkPalindrome("raar");
-    console.log(output);
-
+let checkPalindrome = function (word) {
+	word = word.toLowerCase();
+	for (let i = 0; i < word.length / 2; i++) {
+		if (word[i] != word[word.length - 1 - i]) {
+			return false;
+		}
+	}
+	return true;
+};
+console.log(checkPalindrome("radar"));
 
 // Diagram:
 // 1: i=0 -> checkString[0]='r' checkString[3] = 'r'
