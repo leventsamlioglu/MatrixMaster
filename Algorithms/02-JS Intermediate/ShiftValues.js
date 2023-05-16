@@ -17,8 +17,8 @@ console.log(arr)
 // Diagram:
 // 1: i=0 -> spliced item : 2 -> arr = [2,1,6,4,-7]
 // 2: i=1 -> spliced item : 1 -> arr = [1,2,6,4,-7]
-// 3: i=2 -> spliced item : 6 -> arr = [1,2,6,4,-7]
-// 4: i=3 -> spliced item : 4 -> arr = [4,2,1,6,-7]
+// 3: i=2 -> spliced item : 6 -> arr = [6,1,2,4,-7]
+// 4: i=3 -> spliced item : 4 -> arr = [4,6,1,2,-7]
 // 5: i=4 -> spliced item : -7 -> arr = [-7,4,6,1,2]
 
 
