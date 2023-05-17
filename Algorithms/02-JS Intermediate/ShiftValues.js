@@ -9,7 +9,7 @@
 // Code:
 
 const arr = [2, 1, 6, 4, -7];
-for (let i = 0; i < arr.length; i++) {
+for (let i = 1; i < arr.length; i++) {
   arr.unshift(arr.splice(i, 1)[0]);
 }
 console.log(arr)
