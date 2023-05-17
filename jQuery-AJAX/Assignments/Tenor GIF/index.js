@@ -1,5 +1,3 @@
-import {API_KEY} from './api.js'
-
 let url = $("#button").click(function () {
 	$("#gif").empty();
 	grab_data();
@@ -33,9 +31,9 @@ function createRequest(url) {
 // function to call the trending and category endpoints
 function grab_data() {
 	// set the apikey and limit
-	// var apikey = ;
+	var apikey = 'AIzaSyDWMTZwwSF1FiWG_B7p7z7o2dvK4asYinc';
 	var clientkey = "my_test_app";
-	var lmt = 12;
+	var lmt = 16;
 
 	// test search term
 	let search_term = $("#input").val();
@@ -45,7 +43,7 @@ function grab_data() {
 		"https://tenor.googleapis.com/v2/search?q=" +
 		search_term +
 		"&key=" +
-		API_KEY +
+		apikey +
 		"&client_key=" +
 		clientkey +
 		"&limit=" +
