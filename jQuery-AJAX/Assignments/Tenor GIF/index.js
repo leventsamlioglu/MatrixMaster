@@ -1,3 +1,5 @@
+import {API_KEY} from './api.js'
+
 let url = $("#button").click(function () {
 	$("#gif").empty();
 	grab_data();
@@ -12,9 +14,7 @@ function createRequest(url) {
 		if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
 			// Parse the JSON response
 			var response_objects = JSON.parse(xmlHttp.responseText);
-
-			gifs = response_objects["results"];
-
+			let gifs = response_objects["results"];
 			gifs.map((gif) => {
 				$("#gif").append(`<img src="${gif["media_formats"]["gif"]["url"]}"/>`);
 			});
@@ -33,7 +33,7 @@ function createRequest(url) {
 // function to call the trending and category endpoints
 function grab_data() {
 	// set the apikey and limit
-	var apikey = "AIzaSyDWMTZwwSF1FiWG_B7p7z7o2dvK4asYinc";
+	// var apikey = ;
 	var clientkey = "my_test_app";
 	var lmt = 12;
 
@@ -45,12 +45,11 @@ function grab_data() {
 		"https://tenor.googleapis.com/v2/search?q=" +
 		search_term +
 		"&key=" +
-		apikey +
+		API_KEY +
 		"&client_key=" +
 		clientkey +
 		"&limit=" +
 		lmt;
-
 	createRequest(search_url);
 
 	// data will be loaded by each call's callback
