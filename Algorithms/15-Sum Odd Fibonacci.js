@@ -17,7 +17,7 @@ function sumOddFibonacci(number) {
 	if (number < 1) {
 		return "Number must be greater then 1";
 	} else {
-		for (let i = 0; arr[i]+arr[i+1]<number; i++) {
+		for (let i = 0; arr[i]+arr[i+1]<=number; i++) {
 			arr.push(arr[i] + arr[i + 1]);
 		}
 		arr = arr
@@ -28,7 +28,7 @@ function sumOddFibonacci(number) {
     return console.log(arr);
 }
 
-sumOddFibonacci(10);
+sumOddFibonacci(13);
 
 // i	number	    arr	            arr[i]	    arr[i+1]	arr[i] + arr[i+1]	    arr
 // 0	  10        [1,1]	          1	           1	           2	            [1,1,2]
