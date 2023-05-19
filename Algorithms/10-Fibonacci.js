@@ -1,4 +1,4 @@
-// Write a program using JS that create Fibonacci array
+// Write a program using JS that create Fibonacci array and return the list item
 
 // Pseudocode:
 // 1- Create an array with values [1,1]
@@ -30,3 +30,5 @@ console.log(fibonacci(7));
 // 2	  7	        [1,1,2,3]	      2	           3	           5	            [1,1,2,3,5]
 // 3	  7	        [1,1,2,3,5]	      3	           5	           8	            [1,1,2,3,5,8]
 // 4	  7	        [1,1,2,3,5,8]	  5	           8	          13	            [1,1,2,3,5,8,13]
+
+// Result = 13
