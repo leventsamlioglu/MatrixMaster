@@ -88,8 +88,8 @@ equalsButton.addEventListener("click", () => {
 
   switch (operand) {
     case "+": {
-      // display(Number(array2.join("")) + Number(array1.join("")));
-      display((Number(...array2) + Number(...array1)));
+      display(Number(array2.join("")) + Number(array1.join("")));
+    //   display((Number(...array2) + Number(...array1)));
       topScreen();
       break;
     }
