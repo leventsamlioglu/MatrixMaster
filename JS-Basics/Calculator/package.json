@@ -1,0 +1,28 @@
+{
+  "name": "calculator",
+  "version": "1.0.0",
+  "description": "npm install --save-dev eslint node_modules klasoru silinip 'npm install'",
+  "main": "index.js",
+  "scripts": {
+    "sass" : "node-sass -w public/scss -o assets/styles/ —recursive",
+    "build": "webpack",
+    "build:dev": "webpack-dev-server",
+    "build:prod": "webpack --config webpack.config.prod.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.41.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  },
+  "dependencies": {
+    "node-sass": "^8.0.0"
+  }
+}
