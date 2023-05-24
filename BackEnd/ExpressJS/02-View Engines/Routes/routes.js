@@ -1,5 +1,11 @@
 const express = require("express");
+
 const routes = express.Router();
+
+const func = ()=>{
+console.log('Hello from routes.js');
+}
+
 const {
 	homePageController,
 	aboutPageController,
@@ -16,4 +22,4 @@ routes.get("/blogs/create", createPageController);
 // 404 page
 routes.use(noPageController);
 
-module.exports = routes;
+module.exports = {routes,func};
