@@ -1,5 +1,5 @@
 const express = require("express");
-const routes = require("./Routes/routes");
+const exportedRoutes = require("./Routes/routes");
 
 // express app
 const app = express();
@@ -14,4 +14,9 @@ app.use(express.static('public'))
 app.set("view engine", "ejs");
 // app.set('views', 'myviews');
 
-app.use(routes);
+app.use((req,res,next)=>{
+    exportedRoutes.func();
+    next()
+})
+
+app.use(exportedRoutes.routes);
