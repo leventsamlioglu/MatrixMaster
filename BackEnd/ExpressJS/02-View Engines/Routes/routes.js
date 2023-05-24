@@ -2,24 +2,19 @@ const express = require("express");
 
 const routes = express.Router();
 
+const controllers = require("../controllers/routeControllers");
+
 const func = ()=>{
 console.log('Hello from routes.js');
 }
 
-const {
-	homePageController,
-	aboutPageController,
-	createPageController,
-	noPageController,
-} = require("../controllers/routeControllers");
+routes.get("/", controllers.homePageController);
 
-routes.get("/", homePageController);
+routes.get("/about", controllers.aboutPageController);
 
-routes.get("/about", aboutPageController);
-
-routes.get("/blogs/create", createPageController);
+routes.get("/create", controllers.createPageController);
 
 // 404 page
-routes.use(noPageController);
+routes.use(controllers.noPageController);
 
 module.exports = {routes,func};
