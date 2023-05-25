@@ -27,10 +27,22 @@ const blogsGetController = (req, res) => {
 		});
 }
 
+const blogsPostController = (req, res) => {
+	const blog = new Blog(req.body);
+
+	blog
+		.save()
+		.then((result) => {
+			res.redirect("/blogs");
+		})
+		.catch((err) => console.log(err));
+}
+
 module.exports = {
 	homePageController,
 	aboutPageController,
 	noPageController,
 	blogCreateController,
 	blogsGetController,
+	blogsPostController,
 };
