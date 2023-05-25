@@ -1,7 +1,7 @@
 const express = require("express");
 const exportedRoutes = require("./Routes/routes");
 const mongoose = require("mongoose");
-const Blog = require("./models/blog");
+
 
 // express app
 const app = express();
@@ -18,24 +18,16 @@ mongoose
 
 // middleware & static files
 app.use(express.static("public"));
-// app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({extended: true}));
+app.use((req, res, next) => {
+	res.locals.path = req.path;
+	next();
+  });
+  
 
 // register view engine
 app.set("view engine", "ejs");
 // app.set('views', 'myviews');
-
-app.get("/add-blog", (req, res) => {
-	const blog = new Blog({
-		title: "new blog2",
-		snippet: "about my new blog",
-		body: "more about my new blog",
-	});
-
-	blog
-		.save()
-		.then((result) => res.send(result))
-		.catch((err) => console.log(err));
-});
 
 app.use((req, res, next) => {
 	exportedRoutes.func();
