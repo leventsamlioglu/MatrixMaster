@@ -1,13 +1,13 @@
 const express = require("express");
 const exportedRoutes = require("./Routes/routes");
 const mongoose = require("mongoose");
-
+require('dotenv').config()
 
 // express app
 const app = express();
 
 // connect to MongoDB
-const dbURI = "mongodb+srv://Leo:test1122@blog.u0kfsp6.mongodb.net/Blog_Collection";
+const dbURI = process.env.URI;
 mongoose
 	.connect(dbURI)
 	.then(() => {
