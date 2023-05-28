@@ -49,4 +49,14 @@ const postEdit = (req, res) => {
 		.catch((err) => console.log(err));
 };
 
-module.exports = { homePage, postCreate, postDetail, postDelete, postEdit };
+const commentCreate = (req,res)=>{
+	const id = req.params.id;
+	Post.findByIdAndUpdate(id, {
+		$push: { "comment": req.body.comment }
+	  }).then((result)=>{
+		res.redirect('/')
+	  })
+		
+}
+
+module.exports = { homePage, postCreate, postDetail, postDelete, postEdit, commentCreate };

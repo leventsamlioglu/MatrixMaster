@@ -12,4 +12,6 @@ routes.post("/posts/create/:id", controllers.postEdit);
 
 routes.post("/posts/delete/:id", controllers.postDelete);
 
+routes.post("/comments/create/:id", controllers.commentCreate)
+
 module.exports = routes;

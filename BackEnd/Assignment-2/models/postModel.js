@@ -8,6 +8,9 @@ const userSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		comment:{
+			type: Array,
+		},
 	},
 	{ timestamps: true }
 );
