@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/head.ejs") %>
+	<body>
+		<h1 class="text-center">POST to HOST</h1>
+		<div class="container">
+			<form action="/" method="post">
+				<div class="form-group mb-3">
+					<label for="message">Send a message to the world!</label>
+					<textarea
+						class="form-control border-danger"
+						id="message"
+						name="message"
+						rows="3"
+						minlength="25"
+					></textarea>
+				</div>
+				<button type="submit" class="btn btn-success">Send!</button>
+			</form>
+
+			<div class="users">
+				<% if (posts.length > 0) { %>
+				<h2 class="m-auto mb-4 text-center">All Posts</h2>
+				<div class="row row-cols-4 g-4">
+					<% let i=0 %>
+					<% posts.forEach(post => { %>
+						<% i++ %>
+						<% let formattedDate = post.createdAt.getDate()+ "-" + (post.createdAt.getMonth()+1) + "-" +post.createdAt.getFullYear() %>
+					<div class="col">
+						<div class="card h-100 border-info">
+							<div class="card-body">
+								<h5 class="card-title">Post <%= i %></h5>
+								<h6 class="card-subtitle mb-4 text-muted"><%= post._id %></h6>
+								<p class="card-text"><%= post.message.slice(0,25) %>...</p>
+                		<div class="mb-2">
+                  			<a href="/posts/create/<%= post._id %>" class="fst-italic">See more...</a>
+                		</div>
+						</div>
+							<div class="card-footer">
+								<small class="text-muted">Created at:
+								<%= formattedDate %>
+								</small>
+								
+							</div>
+						</div>
+					</div>
+
+					<% }) %> <% } else { %> There are no blogs to display... <% } %>
+				</div>
+			</div>
+		</div>
+		<div class="text-center mt-4"><%- include("./partials/footer.ejs") %></div>
+	</body>
+</html>
+
+
