@@ -22,14 +22,14 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="/posts/comment/" method="post">
+				<form action="/comments/create/<%= posts._id %>" method="post">
 					<div class="form-group mb-3">
 						<textarea
 							class="form-control border-danger"
-							id="message"
-							name="message"
+							id="comment"
+							name="comment"
 							rows="3"
-							minlength="25"></textarea>
+							></textarea>
 					</div>
 					<div class="modal-footer">
 						<button
