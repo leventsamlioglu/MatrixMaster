@@ -1,11 +1,72 @@
+const Article = require("../models/article");
 
+const homePage = (req, res) => {
+	Article.find()
+		.sort({ createdAt: -1 })
+		.then((result) => {
+			res.render("index", { articles: result });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+};
 
-const homePage = (req,res)=>{
-    res.render('index')
-}
+const getArticle = (req, res) => {
+	res.render("newArticle");
+};
 
-const newArticle = (req,res)=>{
-    res.render('newArticle')
-}
+const createArticle = (req, res) => {
+	const article = new Article(req.body);
+	article
+		.save()
+		.then((result) => {
+			res.redirect("/");
+		})
+		.catch((err) => console.log(err));
+};
 
-module.exports = {homePage, newArticle}
+const detailArticle = (req, res) => {
+	const id = req.params.id;
+	Article.findById(id)
+		.then((result) => {
+			res.render("detail", { articles: result });
+		})
+		.catch((err) => {
+			console.log(err);
+		});
+};
+
+const deleteArticle = (req, res) => {
+	const id = req.params.id;
+	Article.findByIdAndDelete(id).then((result) => {
+		res.redirect("/");
+	});
+};
+
+const editArticleGet = (req, res) => {
+	const id = req.params.id;
+	Article.findById(id)
+		.then((result) => {
+			res.render("editArticle", { articles: result });
+		})
+		.catch((err) => console.log(err));
+};
+
+const editArticlePost = (req, res) => {
+	const id = req.params.id;
+	Article.findByIdAndUpdate(id, req.body)
+		.then((result) => {
+			res.redirect("/");
+		})
+		.catch((err) => console.log(err));
+};
+
+module.exports = {
+	homePage,
+	getArticle,
+	createArticle,
+	detailArticle,
+	deleteArticle,
+	editArticlePost,
+	editArticleGet,
+};
