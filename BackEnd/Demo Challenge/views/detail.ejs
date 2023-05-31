@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/header.ejs") %>
+	<body>
+		<a href="/" class="btn btn-outline-info m-4">Back</a>
+		<div class="container" style="max-width: 700px">
+			<div class="card mt-3">
+				<img
+					src="https://www.fosslinux.com/wp-content/uploads/2022/01/what-is-mongoDB.png"
+					class="card-img-top"
+					style="width: 40%; margin: auto; border-radius: 50%"
+					alt="Details"
+				/>
+				<div class="card-body">
+					<h5 class="card-title"><%= articles.title%></h5>
+					<p class="card-text"><%= articles.article%></p>
+					<form
+						action="/article/delete/<%= articles._id %>"
+						method="post"
+						class="d-flex justify-content-evenly"
+					>
+						<a href="/edit/article/<%= articles._id %>" class="btn btn-success"
+							>Edit</a
+						>
+						<button class="btn btn-danger">Delete</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
