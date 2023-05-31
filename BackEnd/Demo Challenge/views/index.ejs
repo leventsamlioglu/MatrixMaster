@@ -2,23 +2,37 @@
 <html lang="en">
 	<%- include("./partials/header.ejs") %>
 	<body>
-			<nav
-				class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between mb-4"
-			>
-				<a class="navbar-brand" href="/">The New York Times</a>
-
-				<ul class="navbar-nav mr-auto">
-					<li class="nav-item active">
-						<a href="/new/article" class="nav-link">Add New Article</a>
-					</li>
-					
-				</ul>
-			</nav>
-		<div class="container" >
-
-      </div>
-  </body>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-success justify-content-between m-4 p-2"
+		>
+			<a class="navbar-brand" href="/"
+				><img
+					src="https://upload.wikimedia.org/wikipedia/commons/0/02/The_New_York_Times_Logo.svg"
+					alt=""
+					style="width: 150%"
+			/></a>
+			<a href="/new/article" class="btn btn-warning fs-3 text-dark fst-italic">Add New Article</a>
+		</nav>
+		<div class="container">
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<% if(articles) { %> <% articles.forEach((article) => { %>
+				<div class="col" >
+					<div class="card" style="min-height: 550px">
+						<img
+							src="https://www.fosslinux.com/wp-content/uploads/2022/01/what-is-mongoDB.png"
+							class="card-img-top"
+							alt="Articles"
+						/>
+						<div class="card-body">
+							<h5 class="card-title"><%= article.title %></h5>
+							<p class="card-text"><%= article.article.slice(0,300) %>...</p>
+							<a href="/article/<%= article._id%>">Read more...</a>
+						</div>
+					</div>
+				</div>
+				<% }) %> <% } %>
+			</div>
+		</div>
+		<%- include('partials/footer'); -%>
+	</body>
 </html>
-
-
-<%- include('partials/footer'); -%>
