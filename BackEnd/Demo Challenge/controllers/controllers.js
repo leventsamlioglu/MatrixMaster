@@ -1,4 +1,5 @@
 const Article = require("../models/article");
+const handleErrors = require('./errorHandlers')
 
 const homePage = (req, res) => {
 	Article.find()
@@ -20,9 +21,13 @@ const createArticle = (req, res) => {
 	article
 		.save()
 		.then((result) => {
-			res.redirect("/");
+			res.status(200).json({result})
+			// res.redirect('/')
 		})
-		.catch((err) => console.log(err));
+		.catch((err) => {
+		  const errors = handleErrors(err);
+		  res.status(400).json({ errors });
+		});
 };
 
 const detailArticle = (req, res) => {
