@@ -15,18 +15,54 @@
 						id="title"
 						name="title"
 						rows="1"
-					></input>
+					/>
+					<div class="titleError" style="color: coral;"></div>
+
 					<label for="article">Article:</label>
 					<textarea
-						class="form-control border-info"
+						class="form-control border-info mb-4"
 						id="article"
 						name="article"
 						rows="5"
-						minlength="25"
 					></textarea>
+
+					<div class="articleError" style="color: coral;"></div>
 				</div>
 				<button type="submit" class="btn btn-success">Add article</button>
 			</form>
-        </div>
-    </body>
+		</div>
+	</body>
 </html>
+
+<script>
+	const form = document.querySelector("form");
+	const titleError = document.querySelector(".titleError");
+	const articleError = document.querySelector(".articleError");
+	
+	form.addEventListener("submit", async (e) => {
+		e.preventDefault();
+
+		// reset errors
+		titleError.textContent = "";
+		articleError.textContent = "";
+
+		// get values
+		const titleValue = form.title.value;
+		const articleValue = form.article.value;
+
+		try {
+			const res = await fetch("/new/article", {
+				method: "POST",
+				body: JSON.stringify({ title: titleValue, article: articleValue }),
+				headers: { "Content-Type": "application/json" },
+			});
+			const data = await res.json();
+			if (data.errors) {
+				titleError.textContent = data.errors.title;
+				articleError.textContent = data.errors.article;
+			} else location.assign("/");
+		} catch (err) {
+			console.log(err);
+		}
+	});
+</script>
