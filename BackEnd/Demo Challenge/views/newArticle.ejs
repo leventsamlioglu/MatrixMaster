@@ -2,7 +2,8 @@
 <html lang="en">
 	<%- include("./partials/header.ejs") %>
 	<body>
-		<div class="container">
+		<div class="container ">
+			<div class="w-50 shadow-lg p-3 mb-5 bg-body rounded m-auto mt-4">
 			<div class="d-flex justify-content-between mt-4 mb-4">
 				<h1>New Article</h1>
 				<a href="/">Back</a>
@@ -16,7 +17,7 @@
 						name="title"
 						rows="1"
 					/>
-					<div class="titleError" style="color: coral;"></div>
+					<div class="titleError fw-bold fst-italic" style="color: red; height: 50px; "><%=articles.title%></div>
 
 					<label for="article">Article:</label>
 					<textarea
@@ -26,15 +27,17 @@
 						rows="5"
 					></textarea>
 
-					<div class="articleError" style="color: coral;"></div>
+					<div class="articleError fw-bold fst-italic" style="color: red; height: 50px;"><%=articles.article%></div>
 				</div>
 				<button type="submit" class="btn btn-success">Add article</button>
 			</form>
 		</div>
+		</div>
 	</body>
 </html>
 
-<script>
+<!-- <script>
+	
 	const form = document.querySelector("form");
 	const titleError = document.querySelector(".titleError");
 	const articleError = document.querySelector(".articleError");
@@ -65,4 +68,4 @@
 			console.log(err);
 		}
 	});
-</script>
+</script> -->
