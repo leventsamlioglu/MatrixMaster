@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const exportedRoutes = require('./routes/router')
+require('dotenv').config()
 
 const app = express()
-const dbURI = "mongodb+srv://Leo:test1122@blog.u0kfsp6.mongodb.net/FEED"
+
+const dbURI = process.env.URI
 
 mongoose.connect(dbURI)
 .then(()=>{
