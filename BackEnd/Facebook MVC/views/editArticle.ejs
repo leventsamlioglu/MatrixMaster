@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/header.ejs") %>
+	<body>
+		<div class="container">
+			<div class="d-flex justify-content-between mt-4 mb-4">
+				<h1>Edit Post</h1>
+				<a href="/feed">Back</a>
+			</div>
+			<form action="/feed/edit/<%= feeds._id%>" method="post">
+				<div class="form-group mb-3">
+					<label for="name">Name:</label>
+					<input class="form-control border-info mb-4" id="name" name="name" rows="1" value="<%= feeds.name %>">
+					<label for="message">Message:</label>
+					<textarea
+						class="form-control border-info"
+						id="message"
+						name="message"
+						rows="5"
+						
+					><%= feeds.message %></textarea>
+				</div>
+				<button type="submit" class="btn btn-success">Submit</button>
+			</form>
+        </div>
+    </body>
+</html>
+	

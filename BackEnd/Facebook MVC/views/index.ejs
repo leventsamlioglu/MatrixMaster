@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<%- include("./partials/header.ejs") %>
+	<body>
+		<nav
+			class="navbar navbar-expand-lg navbar-dark bg-primary justify-content-between m-4 p-2"
+		>
+			<a class="navbar-brand fs-1" href="/feed"> Welcome to FaceBook</a>
+		</nav>
+		<div class="container">
+			<!-- Form -->
+
+			<div class="w-50 shadow-lg p-3 mb-5 bg-body rounded m-auto mt-4">
+				<form action="/feed" method="post">
+					<div class="form-group mb-3">
+						<label for="name">Name:</label>
+						<input
+							class="form-control border-info mb-4"
+							id="name"
+							name="name"
+							rows="1"
+						/>
+						<div
+							class="nameError fw-bold fst-italic"
+							style="color: red; height: 50px"
+						></div>
+
+						<label for="message">Message:</label>
+						<textarea
+							class="form-control border-info mb-4"
+							id="message"
+							name="message"
+							rows="5"
+						></textarea>
+
+						<div
+							class="messageError fw-bold fst-italic"
+							style="color: red; height: 50px"
+						></div>
+					</div>
+					<button type="submit" class="btn btn-success">Add a post</button>
+				</form>
+			</div>
+
+			<!-- Posts -->
+			<div class="row row-cols-1 row-cols-md-3 g-4">
+				<% if(feeds) { %> <% feeds.forEach((feed) => { %> <% let formattedDate =
+				feed.createdAt.getDate()+ "-" + (feed.createdAt.getMonth()+1) + "-"
+				+feed.createdAt.getFullYear() %>
+				<div class="col shadow p-3 mb-5 bg-body rounded">
+					<div class="card" style="min-height: 400px">
+						<img
+							src="https://www.fosslinux.com/wp-content/uploads/2022/01/what-is-mongoDB.png"
+							class="card-img-top"
+							alt="FaceBook"
+						/>
+						<div class="card-body">
+							<h5 class="card-title"><%= feed.name %></h5>
+							<p class="card-text"><%= feed.message.slice(0,300) %>...</p>
+							<a href="/feed/<%= feed._id%>">See more...</a>
+						</div>
+						<div class="card-footer text-muted">
+							Created: <%= formattedDate%>
+						</div>
+					</div>
+				</div>
+				<% }) %> <% } %>
+			</div>
+		</div>
+		<%- include('partials/footer'); -%>
+	</body>
+</html>
