@@ -13,7 +13,7 @@ const homePage = (req, res) => {
 };
 
 const getArticle = (req, res) => {
-	res.render("newArticle");
+	res.render("newArticle", {articles:req.body});
 };
 
 const createArticle = (req, res) => {
@@ -21,12 +21,11 @@ const createArticle = (req, res) => {
 	article
 		.save()
 		.then((result) => {
-			res.status(200).json({result})
-			// res.redirect('/')
+			res.redirect('/')
 		})
 		.catch((err) => {
 		  const errors = handleErrors(err);
-		  res.status(400).json({ errors });
+		  res.render('newArticle', {articles:errors})
 		});
 };
 
@@ -61,7 +60,7 @@ const editArticlePost = (req, res) => {
 	const id = req.params.id;
 	Article.findByIdAndUpdate(id, req.body)
 		.then((result) => {
-			res.redirect("/");
+			res.redirect(`/article/${id}`);
 		})
 		.catch((err) => console.log(err));
 };
