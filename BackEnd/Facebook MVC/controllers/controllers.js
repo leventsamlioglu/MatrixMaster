@@ -1,4 +1,4 @@
-const FEED = require("../models/article");
+const FEED = require("../models/feed");
 const handleErrors = require("./errorHandlers");
 
 const homePage = (req, res) => {
@@ -23,7 +23,6 @@ const createPost = (req, res) => {
 			FEED.find()
 			.then(result=>{
 				const response = handleErrors(err);
-				console.log(req.body);
 					res.render('index1',{feeds:{body:req.body, result:result, nameError: response.errors.name, messageError:response.errors.message}})
 					
 			})
