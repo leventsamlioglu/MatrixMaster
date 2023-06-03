@@ -6,12 +6,12 @@ const postSchema = new Schema(
         name:{
             type: String,
             required: [true, 'Please enter a name!'],
-            minlength: [15, 'Name must be longer than 15 character...'],
+            maxLength: [15, 'Name must be shorter than 15 character...'],
         },
         message:{
             type: String,
             required: [true, 'Please enter a message!'],
-            minlength: [40, 'Message must be longer than 40 character...'],
+            maxLength: [40, 'Message must be shorter than 40 character...'],
 
         },
         
