@@ -85,10 +85,10 @@ const loginGet = (req, res) => {
 };
 
 const signupPost = async (req, res) => {
-	const { username, email, password1, password2 } = req.body;
+	// const { username, email, password1, password2 } = req.body;
 
 	try {
-		const user = await User.create({ username, email, password1, password2 });
+		const user = await User.create(req.body);
 		const token = createToken(user._id);
 		res.cookie("jwt", token, { httpOnly: true, maxAge: maxAge * 1000 });
 		res.status(201).json({ user: user._id });
