@@ -37,9 +37,11 @@ const postCreate = (req, res) => {
 
 const postDetail = (req, res) => {
 	const id = req.params.id;
+	let permission
 	Post.findById(id)
 		.then((result) => {
-			res.render("details", { posts: result });
+			(userName===result.user) ? permission = true : permission = false
+			res.render("details", { posts: result, permission });
 		})
 		.catch((err) => console.log(err));
 };

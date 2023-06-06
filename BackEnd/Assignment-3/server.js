@@ -2,7 +2,6 @@ const express = require("express");
 const exportedRoutes = require("./routes/routes");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
-const { checkUser } = require("./middleware/authMiddleware");
 require("dotenv").config();
 
 const app = express();
