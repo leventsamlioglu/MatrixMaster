@@ -5,23 +5,27 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
-class TodoList extends React.Component {
+class TodoListClass extends React.Component {
 	constructor(props) {
 		super(props);
 		this.ref = React.createRef();
-		this.handleChange = (e) => {
-			this.state.input(e.target.value);
-		};
-		this.handleClick = () => {
-			this.state.items([...this.state.items, this.state.input]);
-			this.state.input("");
-			this.ref.current.value = "";
-			this.ref.current.focus();
+		this.state = {
+			input: "",
+			items: [],
 		};
 	}
-	state = {
-		input: "",
-		items: [],
+
+	handleChange = (e) => {
+		this.setState({ input: e.target.value });
+	};
+
+	handleClick = () => {
+		this.setState({
+			items: [...this.state.items, this.state.input],
+			input: "",
+		});
+		this.ref.current.value = "";
+		this.ref.current.focus();
 	};
 
 	render() {
@@ -55,4 +59,4 @@ class TodoList extends React.Component {
 	}
 }
 
-export default TodoList;
+export default TodoListClass;
