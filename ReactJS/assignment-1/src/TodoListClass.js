@@ -1,9 +1,9 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
-import ListGroup from "react-bootstrap/ListGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
+import List from "./components/List";
 
 class TodoListClass extends React.Component {
 	constructor(props) {
@@ -33,16 +33,7 @@ class TodoListClass extends React.Component {
 			<Card className="w-50 m-auto">
 				<Card.Body>
 					<Card.Title className="text-center">TODO LIST</Card.Title>
-
-					<ListGroup className="mb-4">
-						{this.state.items.map((item, index) => (
-							<div className="d-flex mb-2" key={index}>
-								<InputGroup.Checkbox />
-								<ListGroup.Item>{item}</ListGroup.Item>
-							</div>
-						))}
-					</ListGroup>
-
+					<List items={this.state.items}/>
 					<InputGroup className="mb-3">
 						<Button
 							variant="outline-secondary"
