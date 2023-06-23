@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
-import List from "./components/List";
+import ListGroup from "react-bootstrap/ListGroup";
 
 class TodoListClass extends React.Component {
 	constructor(props) {
@@ -28,12 +28,32 @@ class TodoListClass extends React.Component {
 		this.ref.current.focus();
 	};
 
+	handleCheckBox = (index) => {
+		const filteredItems = this.state.items.filter((_, i) => i !== index);
+		setTimeout(() => {
+			this.setState({
+				items: filteredItems,
+			});
+		}, 500);
+	};
+
 	render() {
 		return (
 			<Card className="w-50 m-auto">
 				<Card.Body>
 					<Card.Title className="text-center">TODO LIST</Card.Title>
-					<List items={this.state.items}/>
+
+					<ListGroup className="mb-4">
+						{this.state.items.map((item, index) => (
+							<div className="d-flex mb-2" key={index}>
+								<InputGroup.Checkbox
+									onChange={() => this.handleCheckBox(index)}
+								/>
+								<ListGroup.Item>{item}</ListGroup.Item>
+							</div>
+						))}
+					</ListGroup>
+
 					<InputGroup className="mb-3">
 						<Button
 							variant="outline-secondary"
