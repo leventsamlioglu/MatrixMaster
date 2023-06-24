@@ -20,10 +20,10 @@ class TodoListClass extends React.Component {
 	};
 
 	handleClick = () => {
-		this.setState({
-			items: [...this.state.items, this.state.input],
+		this.setState(state=>({
+			items: [...state.items, state.input],
 			input: "",
-		});
+		}));
 		this.ref.current.value = "";
 		this.ref.current.focus();
 	};
@@ -34,7 +34,7 @@ class TodoListClass extends React.Component {
 			this.setState({
 				items: filteredItems,
 			});
-		}, 500);
+		}, 300);
 	};
 
 	render() {
