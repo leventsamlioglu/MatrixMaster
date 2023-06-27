@@ -1,21 +1,24 @@
+import { useState } from "react";
 import axios from "axios";
-import { useState} from "react";
+import Input from "./Input";
+import Card from "./Cards";
+import Loading from "./Loading";
 
 function FindPlace() {
 	const [lat, setLat] = useState(0);
 	const [long, setLong] = useState(0);
 	const [list, setList] = useState([]);
-    const [search, setSearch] = useState('')
-	const src =
-		"https://img.volkskrant.nl/11c2ddc0476adad70d858660909f34b4c992c484/restaurant-basiliek-heeft-een-onmiskenbare-wow-factor-niet-door-opzichtigheid-maar-door-vakmanschap";
+	const [search, setSearch] = useState("");
+	const [isLoading, setIsLoading] = useState(false);
 
+	// Get position
 	navigator.geolocation.getCurrentPosition((position) => {
 		let lat = position.coords.latitude.toFixed(2);
 		let long = position.coords.longitude.toFixed(2);
-		setLat(lat);
-		setLong(long);
+        setLat(lat)
+        setLong(long)
 	});
-
+	// Assign search parameters
 	const searchParams = new URLSearchParams({
 		query: search,
 		ll: `${lat},${long}`,
@@ -23,8 +26,10 @@ function FindPlace() {
 		sort: "DISTANCE",
 	});
 
-    const clickHandle =()=>{
-        axios
+	// Fetch data
+	const clickHandle = () => {
+		setIsLoading(true);
+		axios
 			.get(`https://api.foursquare.com/v3/places/search?${searchParams}`, {
 				method: "GET",
 				headers: {
@@ -37,45 +42,14 @@ function FindPlace() {
 			})
 			.then((data) => {
 				setList(data);
+				setIsLoading(false);
 			});
-    }
-    console.log(list);
+	};
 
 	return (
 		<>
-			<div className="input-group mt-4 mb-3 m-auto w-50 ">
-				<input
-					type="text"
-					className="form-control fs-3"
-					placeholder="Find a place near your neighborhood.."
-                    value={search}
-                    onChange={(e)=>{
-                        setSearch(e.target.value)
-                    }}
-				/>
-				<div className="input-group-append">
-					<button className="btn btn-outline-secondary fs-3" type="button" onClick={clickHandle}>
-						Let's Find It!
-					</button>
-				</div>
-			</div>
-			<div className="card-group w-75 m-auto">
-				{list &&
-					list.map((item) => (
-						<div key={item.fsq_id} className="card shadow-lg p-1 bg-body rounded">
-							<img className="card-img-top" src={src} alt="Restaurant" />
-							<div className="card-body d-flex flex-column justify-content-between">
-								<h5 className="card-title">{item.name}</h5>
-								<p className="card-text">{item.location.formatted_address}</p>
-								<p className="card-text">
-									<small className="text-muted">
-										Distance {item.distance} m
-									</small>
-								</p>
-							</div>
-						</div>
-					))}
-			</div>
+			<Input search={search} setSearch={setSearch} clickHandle={clickHandle} />
+			{isLoading ? <Loading /> : <Card list={list} />}
 		</>
 	);
 }
