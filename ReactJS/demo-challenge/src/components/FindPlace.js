@@ -15,8 +15,8 @@ function FindPlace() {
 	navigator.geolocation.getCurrentPosition((position) => {
 		let lat = position.coords.latitude.toFixed(2);
 		let long = position.coords.longitude.toFixed(2);
-        setLat(lat)
-        setLong(long)
+		setLat(lat);
+		setLong(long);
 	});
 	// Assign search parameters
 	const searchParams = new URLSearchParams({
@@ -29,6 +29,7 @@ function FindPlace() {
 	// Fetch data
 	const clickHandle = () => {
 		setIsLoading(true);
+		setSearch("");
 		axios
 			.get(`https://api.foursquare.com/v3/places/search?${searchParams}`, {
 				method: "GET",
