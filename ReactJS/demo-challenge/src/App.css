@@ -1,0 +1,10 @@
+body{
+	background-image: linear-gradient(to right, #434343 0%, black 100%);
+}
+
+.card-group {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 20px;
+  text-align: center;
+}
