@@ -26,6 +26,7 @@ function FindPlace() {
 		sort: "DISTANCE",
 	});
 
+
 	// Fetch data
 	const clickHandle = (value) => {
 		setIsLoading(true);
@@ -39,7 +40,6 @@ function FindPlace() {
 				},
 			})
 			.then((result) => {
-				setSearch("");
 				return result.data.results;
 			})
 			.then((data) => {

@@ -1,7 +1,12 @@
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 
 const Input = (params) => {
 	const ref = useRef();
+
+	useEffect(() => {
+		ref.current.focus();
+	}, []);
+
 	return (
 		<div className="input-group mt-4 mb-3 m-auto w-50 ">
 			<input
@@ -14,7 +19,10 @@ const Input = (params) => {
 				<button
 					className="btn btn-outline-secondary fs-3"
 					type="button"
-					onClick={() => params.clickHandle(ref.current.value)}
+					onClick={() => {
+						params.clickHandle(ref.current.value);
+						ref.current.value = ""
+					}}
 				>
 					Let's Find It!
 				</button>
