@@ -27,9 +27,9 @@ function FindPlace() {
 	});
 
 	// Fetch data
-	const clickHandle = () => {
+	const clickHandle = (value) => {
 		setIsLoading(true);
-		setSearch("");
+		setSearch(value);
 		axios
 			.get(`https://api.foursquare.com/v3/places/search?${searchParams}`, {
 				method: "GET",
@@ -39,6 +39,7 @@ function FindPlace() {
 				},
 			})
 			.then((result) => {
+				setSearch("");
 				return result.data.results;
 			})
 			.then((data) => {
@@ -49,7 +50,7 @@ function FindPlace() {
 
 	return (
 		<>
-			<Input search={search} setSearch={setSearch} clickHandle={clickHandle} />
+			<Input clickHandle={clickHandle} />
 			{isLoading ? <Loading /> : <Card list={list} />}
 		</>
 	);
