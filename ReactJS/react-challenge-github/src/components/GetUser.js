@@ -6,8 +6,8 @@ import Repos from "./Repos";
 import Loading from "./Loading";
 
 const GetUser = () => {
-	const clientId = "9aea82a4aa31fa8e5c0f";
-	const clientSecrets = "7afba68e107b166cd6e2ae0afc43397e7e7dad8a";
+	const clientId = process.env.REACT_APP_GITHUB_CLIENTID;
+	const clientSecrets = process.env.REACT_APP_GITHUB_CLIENTSECRET;
 
 	const [user, setUser] = useState();
 	const [repos, setRepos] = useState();
@@ -39,7 +39,7 @@ const GetUser = () => {
 	return (
 		<div className="container p-4">
 			<Input clickHandle={clickHandle} />
-			{isLoading && <Loading/>}
+			{isLoading && <Loading />}
 			{user && <Card user={user} />}
 			{repos && <Repos repos={repos} />}
 		</div>
