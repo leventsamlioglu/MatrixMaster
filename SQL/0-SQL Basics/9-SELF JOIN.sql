@@ -13,3 +13,9 @@ SELECT id, name
     ON id = stop
  WHERE num = '4'
    AND company = 'LRT'
+
+-- # 4. Add a HAVING clause to restrict the output to these two routes. 
+SELECT company, num, COUNT(*)
+  FROM route WHERE stop=149 OR stop=53
+GROUP BY company, num
+HAVING COUNT(*) = 2
