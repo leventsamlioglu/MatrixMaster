@@ -39,3 +39,11 @@ SELECT a.company, a.num
   FROM route a JOIN route b ON a.company = b.company AND a.num = b.num
  WHERE a.stop = 115 AND b.stop = 137
  GROUP BY a.company, a.num
+
+--  # 8. Give a list of the services which connect the stops 'Craiglockhart' and 'Tollcross' 
+SELECT a.company, a.num
+  FROM route a JOIN route b ON a.company = b.company AND a.num = b.num
+  JOIN stops stopa ON stopa.id = a.stop
+  JOIN stops stopb ON stopb.id = b.stop
+ WHERE stopa.name = 'Craiglockhart' AND stopb.name = 'Tollcross'
+ GROUP BY a.company, a.num
